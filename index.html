@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rest Countries API</title>
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="contaiiner">
+      <h1>Where in the world?</h1>
+      <button class="dark-mode btn btn-outline-dark">
+        <i class="far fa-moon"></i>Dark Mode
+      </button>
+    </div>
+    <div class="main">
+      <label for="search"
+        ><input type="text" placeholder="&#61442; Search for Country"
+      /></label>
+
+      <div class="right-filter">
+        <div class="filter">
+          <p>Filter By Region</p>
+          <button><i class="fas fa-chevron-down"></i></button>
+        </div>
+        <div class="options hidden">
+          <ul>
+            <li><button class="btn region">Africa</button></li>
+            <li><button class="btn region">America</button></li>
+            <li><button class="btn region">Asia</button></li>
+            <li><button class="btn region">Europe</button></li>
+            <li><button class="btn region">Oceania</button></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <section class="countries-collection">
+      <!-- <div class="country">
+            <div class="card border-0" style="max-width: 18rem; min-width: 15rem;">
+                <img src="images/download.png" class="card-img-top img-fluid" alt="...">
+                <div class="card-body">
+                  <h2 class="card-title fs-2" >India</h2>
+                  <p class="card-text my-1 fs-6"><strong> Population : </strong></p>
+                  <p class="card-text my-1 fs-6"><strong>Region : </strong></p>
+                  <p class="card-text my-1 fs-6"><strong>Capital : </strong></p>
+                 
+                </div>
+              </div>
+        </div>
+      
+       
+        <div class="country">
+            <div class="card" style="max-width: 18rem; min-width: 15rem;">
+                <img src="images/download.png" class="card-img-top img-fluid" alt="...">
+                <div class="card-body">
+                  <h2 class="card-title fs-2" >India</h2>
+                  <p class="card-text my-1 fs-6"><strong> Population : </strong></p>
+                  <p class="card-text my-1 fs-6"><strong>Region : </strong></p>
+                  <p class="card-text my-1 fs-6"><strong>Capital : </strong></p>
+                 
+                </div>
+              </div>
+        </div> -->
+    </section>
+
+    <section class="inner-page hidden">
+      <button class="btn btn-outline-warning my-4 mx-3 back">Back</button>
+      <div class="country-specific">
+        <!-- <div class="left">
+          <img src="images/download.png" class="img-fluid" alt="" />
+        </div>
+        <div class="right">
+          <h1 class="fs-3">India</h1>
+          <section class="right-inner">
+            <div class="right-left">
+              <p class="card-text my-1 fs-6">
+                <strong>Native Name: </strong>${data.population}
+              </p>
+              <p class="card-text my-1 fs-6 regionName">
+                <strong>Population: </strong>${data.region}
+              </p>
+              <p class="card-text my-1 fs-6">
+                <strong>Region: </strong>${data.capital}
+              </p>
+              <p class="card-text my-1 fs-6">
+                <strong>Sub Region: </strong>${data.capital}
+              </p>
+              <p class="card-text my-1 fs-6">
+                <strong>Capital: </strong>${data.capital}
+              </p>
+            </div>
+            <div class="right-right">
+              <p class="card-text my-1 fs-6">
+                <strong>Top Level Domain: </strong>${data.capital}
+              </p>
+              <p class="card-text my-1 fs-6">
+                <strong>Currencies: </strong>${data.capital}
+              </p>
+              <p class="card-text my-1 fs-6">
+                <strong>Languages: </strong>${data.capital}
+              </p>
+            </div>
+          </section>
+          <p class="card-text my-1 fs-6">
+            <strong>Borders: </strong>${data.capital}
+          </p>
+        </div> -->
+      </div>
+    </section>
+    <script src="script.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

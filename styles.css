@@ -1,0 +1,165 @@
+@import url("https://fonts.google.com/specimen/Nunito+Sans");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: hsl(0, 0%, 98%);
+  color: hsl(200, 15%, 8%);
+  font-family: "Nunito+Sans", sans-serif !important;
+}
+.contaiiner,
+.main {
+  width: 100%;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.countries-collection {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+button {
+  border: 0;
+  background: transparent;
+  outline: none;
+  cursor: pointer;
+}
+.contaiiner {
+  box-shadow: 0 5px 8px #585555 !important;
+}
+.dark-mode {
+  font-size: 16px;
+  cursor: pointer;
+}
+.dark-mode i {
+  padding-right: 5px;
+}
+
+.main input {
+  width: 100%;
+  padding: 17px 14px;
+  height: 55px;
+  font-family: FontAwesome, "Nunito+Sans", sans-serif;
+  border-radius: 3px;
+  box-shadow: 1px 1px 5px grey;
+  border: 0;
+  cursor: pointer;
+}
+
+ul {
+  text-decoration: none;
+  list-style: none;
+  box-shadow: 0 0 8px grey;
+  border-radius: 5px;
+  /* padding-left: 5px; */
+}
+
+.filter {
+  box-shadow: 0 0 8px grey;
+  border-radius: 5px;
+  padding: 8px;
+  margin: 10px 0;
+  cursor: pointer;
+}
+.filter p {
+  display: inline;
+}
+
+.country {
+  box-shadow: 0 0 5px grey;
+  border-radius: 7px;
+
+  margin: 5% 2%;
+}
+.hidden {
+  display: none !important;
+}
+.img-fluid {
+  object-fit: cover;
+  height: 170px !important;
+}
+
+.card {
+  width: 288px !important;
+  min-width: 100% !important;
+  height: 350px !important;
+  cursor: pointer;
+}
+
+.card-title {
+  height: 50px;
+  object-fit: cover;
+}
+
+.country-specific {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  width: 80%;
+  margin: 0 auto;
+}
+.left,
+.right {
+  flex: 48%;
+}
+.left img {
+  width: 500px !important;
+  /* width: 100%; */
+  /* min-width: 250px; */
+  height: 284px !important;
+  object-fit: cover;
+}
+.right-inner {
+  display: flex;
+  flex-wrap: wrap;
+}
+.right-right,
+.right-left {
+  padding: 1%;
+  flex: 45%;
+}
+.inner-page {
+  height: 84vh !important;
+}
+@media (max-width: 600px) {
+  .left,
+  .right {
+    flex: 52% !important;
+  }
+  .left img{
+    width: unset;
+    width: 90% !important;
+    height: unset !important;
+  }
+}
+@media (max-width: 450px) {
+  .right {
+    margin-left: 20px;
+  }
+  .contaiiner {
+    align-items: center;
+  }
+  .contaiiner h1,
+  .search {
+    margin: 2% auto;
+    text-align: center;
+  }
+  .contaiiner button {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 300px){
+    .card{
+        width: 80% !important;
+       
+    }
+}
