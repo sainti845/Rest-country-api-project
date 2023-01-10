@@ -129,12 +129,16 @@ ul {
 .inner-page {
   height: 84vh !important;
 }
+.darkb {
+  background-color: hsl(209, 23%, 22%);
+  color:  hsl(0, 0%, 98%) !important;
+}
 @media (max-width: 600px) {
   .left,
   .right {
     flex: 52% !important;
   }
-  .left img{
+  .left img {
     width: unset;
     width: 90% !important;
     height: unset !important;
@@ -157,9 +161,9 @@ ul {
   }
 }
 
-@media (max-width: 300px){
-    .card{
-        width: 80% !important;
-       
-    }
+@media (max-width: 300px) {
+  .card {
+    width: 80% !important;
+  }
 }
+

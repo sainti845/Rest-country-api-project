@@ -13,12 +13,12 @@ const countryName = document.getElementsByClassName("countryName");
 const countrySpecific = document.querySelector(".country-specific");
 
 let a = 0;
-
+let darkcard;
 ///////back function /////////
 
 const back = document.querySelector(".back");
 back.addEventListener("click", () => {
-  console.log("heello");
+  // console.log("heello");
   main.classList.toggle("hidden");
   countriesCollection.classList.toggle("hidden");
   innerPage.classList.toggle("hidden");
@@ -28,20 +28,24 @@ back.addEventListener("click", () => {
 async function getCountry() {
   const url = await fetch("https://restcountries.com/v3.1/all");
   const res = await url.json();
-  console.log(res);
+  // console.log(res);
   res.forEach((element) => {
     createCountry(element);
     // console.log(element);
   });
 }
-getCountry();
+async function call() {
+  await getCountry();
+  darkcard = document.querySelectorAll(".card-body");
+}
+call();
 //////////creating country using card//////
 function createCountry(data) {
   const country = document.createElement("div");
   country.classList.add("country");
   country.innerHTML = ` <div class="card border-0" >
     <img src="${data.flags.png}" class="card-img-top img-fluid" alt="...">
-    <div class="card-body " id="cardbody">
+    <div class="card-body">
       <h2 class="card-title countryName fs-4 " >${data.name.official}</h2>
       <p class="card-text my-1 fs-6"><strong> Population : </strong>${data.population}</p>
       <p class="card-text my-1 fs-6 regionName"><strong>Region : </strong>${data.region}</p>
@@ -64,10 +68,10 @@ filter.addEventListener("click", () => {
 
 region.forEach((element) => {
   element.addEventListener("click", () => {
-    console.log(element);
+    // console.log(element);
 
     Array.from(regionName).forEach((elem) => {
-      console.log(elem.innerText);
+      // console.log(elem.innerText);
       if (elem.innerText.includes(element.innerText)) {
         elem.parentElement.parentElement.parentElement.style.display = "grid";
       } else {
@@ -81,10 +85,12 @@ region.forEach((element) => {
 dark.addEventListener("click", () => {
   if (a === 0) {
     a = 1;
-  // cardBody.classList.add("ayush");
+    // cardBody.classList.add("ayush");
     countriesCollection.style.backgroundColor = " hsl(207, 26%, 17%)";
     innerPage.style.backgroundColor = "hsl(207, 26%, 17%)";
     // cardBody.style.backgroundColor= "hsl(209, 23%, 22%) !important";
+    console.log(darkcard);
+    darkcard.forEach((card) => card.classList.add("darkb"));
     main.style.backgroundColor = " hsl(207, 26%, 17%)";
     contaiiner.style.backgroundColor = " hsl(209, 23%, 22%)";
     filter.style.backgroundColor = " hsl(209, 23%, 22%)";
@@ -100,6 +106,7 @@ dark.addEventListener("click", () => {
     contaiiner.style.boxShadow = " 0 0 5px grey ";
     innerPage.style.backgroundColor = " hsl(0, 0%, 98%)";
     contaiiner.style.backgroundColor = " unset";
+    darkcard.forEach((card) => card.classList.remove("darkb"));
 
     search.style.backgroundColor = " hsl(0, 0%, 98%)";
     filter.style.backgroundColor = " hsl(0, 0%, 98%)";
@@ -109,17 +116,16 @@ dark.addEventListener("click", () => {
     innerPage.style.color = "unset";
 
     main.style.backgroundColor = " hsl(0, 0%, 98%)";
-   
   }
 });
 
 /////////////////search option/////////////////
 search.addEventListener("input", (e) => {
   e.preventDefault();
-  console.log(search.value);
+  // console.log(search.value);
 
   Array.from(countryName).forEach((elem) => {
-    console.log(elem.innerText);
+    // console.log(elem.innerText);
     if (elem.innerText.toLowerCase().includes(search.value.toLowerCase())) {
       elem.parentElement.parentElement.parentElement.style.display = "grid";
     } else {
@@ -130,15 +136,15 @@ search.addEventListener("input", (e) => {
 
 ////////show country function////////////
 function showCountryDetails(data) {
-  console.log(data);
+  // console.log(data);
   const cur = Object.values(data.currencies);
   const lang = Object.values(data.languages);
-  console.log(cur, "jd");
-  console.log(lang.join(","));
+  // console.log(cur, "jd");
+  // console.log(lang.join(","));
 
   innerPage.classList.toggle("hidden");
 
-  countrySpecific.innerHTML='';
+  countrySpecific.innerHTML = "";
   countrySpecific.innerHTML = `
  
     <div class="left">
@@ -181,7 +187,9 @@ function showCountryDetails(data) {
         </div>
       </section>
       <p class="card-text my-1 mx-1 fs-6">
-            <strong>Borders: </strong>${data.borders?data.borders.join(","):'NO BORDER SHARING'}
+            <strong>Borders: </strong>${
+              data.borders ? data.borders.join(",") : "NO BORDER SHARING"
+            }
           </p>
     </div>
  `;
