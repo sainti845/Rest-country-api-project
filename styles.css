@@ -11,6 +11,17 @@ body {
   color: hsl(200, 15%, 8%);
   font-family: "Nunito+Sans", sans-serif !important;
 }
+
+#preloader{
+  background: #000 url(images/loader.gif) center no-repeat;
+  width: 100%;
+  height: 100vh;
+  opacity: .8;
+  background-size: 15%;
+  z-index: 100;
+  position: fixed;
+}
+
 .contaiiner,
 .main {
   width: 100%;
@@ -19,10 +30,23 @@ body {
   justify-content: space-between;
   flex-wrap: wrap;
 }
+
+.contaiiner h2{
+  font-weight: 600;
+}
+
+.main{
+  background-color: hsl(0, 0%, 98%)
+}
+
 .countries-collection {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  background-color: hsl(0, 0%, 98%)
+}
+.contaiiner button,.inner-page button{
+  border: 2px solid grey;
 }
 
 button {
@@ -41,6 +65,16 @@ button {
 .dark-mode i {
   padding-right: 5px;
 }
+
+.options{
+  position: absolute;
+    z-index: 2;
+    background-color: white;
+    color: rgb(250, 250, 250);
+}
+
+
+
 
 .main input {
   width: 100%;
