@@ -92,6 +92,9 @@ ul {
   list-style: none;
   box-shadow: 0 0 8px grey;
   border-radius: 5px;
+  margin-top: 0 !important; 
+    margin-bottom: 0rem !important;
+    padding-left: 0rem !important;
   /* padding-left: 5px; */
 }
 
